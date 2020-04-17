@@ -6,5 +6,7 @@ def imdone(chapter, exercise):
         r = requests.get(f'https://206-167-181-43.cloud.computecanada.ca:8080/chap{chapter}ex{exercise}')
         if r.status_code < 200 or r.status_code >= 300:
             print(f"Failed to connect to server ({r.status_code})", file=sys.stderr)
+        else:
+            print("Success")
     except:
         print("Failed to connect to server", file=sys.stderr)
